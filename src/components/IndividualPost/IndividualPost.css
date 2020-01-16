@@ -1,0 +1,12 @@
+.Individual_post_itm {
+  border: 2px solid black;
+  padding: 12px;
+  margin: 5px;
+}
+.Individual_post_itm a {
+  text-decoration: none;
+}
+.Individual_post_itm a,
+.Individual_post_itm a:visited {
+  color: black;
+}

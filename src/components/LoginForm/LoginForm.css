@@ -1,0 +1,13 @@
+.login-form input,
+.login-form label {
+  display: block;
+  margin: 12px auto;
+}
+.login-form {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+.Header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Header h1 a {
+  font-size: 26px;
+  text-decoration: none;
+}
+
+.Header a {
+  color: rgb(219, 219, 219);
+}
+.Header_not-logged-in {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login,
+.register {
+  font-size: 16px;
+  margin: 15px;
+  text-decoration: none;
+}

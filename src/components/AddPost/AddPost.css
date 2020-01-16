@@ -1,0 +1,36 @@
+.add-post-page input,
+.add-post-page label {
+  display: block;
+  margin: 0 auto;
+}
+.add-post-page {
+  text-align: center;
+  display: block;
+  height: 600px;
+  width: 500px;
+  border: 1px solid black;
+}
+.add-post-page button {
+  margin: 30px;
+}
+.post-content {
+  display: block;
+  margin: 0 auto;
+  height: 400px;
+  width: 200px;
+}
+
+.AddPost_add-post-button {
+  color: grey;
+  text-decoration: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  width: 150px;
+  font-size: 26px;
+  border: 2px solid black;
+}
+.AddPost_add-post-button a,
+.AddPost_add-post-button a:visited {
+  color: grey;
+}

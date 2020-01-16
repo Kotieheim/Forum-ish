@@ -1,0 +1,31 @@
+.App {
+  height: 100vh;
+}
+.App_main {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.App_header {
+  padding: 0 20px;
+  background-color: rgb(51, 51, 54);
+}
+
+.Banner {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 700px;
+  border-bottom: 2px solid black;
+}
+.Banner h1 {
+  font-size: 36px;
+}
+.AddPost-btn {
+  display: block;
+  margin: 12px auto;
+  width: 200px;
+  height: auto;
+  padding: 12px;
+}
