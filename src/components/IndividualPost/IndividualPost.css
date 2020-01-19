@@ -1,12 +1,22 @@
-.Individual_post_itm {
-  border: 2px solid black;
-  padding: 12px;
-  margin: 5px;
-}
-.Individual_post_itm a {
+.IndividualPost {
+  text-decoration: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #3f455038;
+  display: block;
+  padding: 10px 10px 0;
+  text-align: left;
+  width: 100%;
   text-decoration: none;
 }
-.Individual_post_itm a,
-.Individual_post_itm a:visited {
-  color: black;
+.IndividualPost_header {
+  text-decoration: none;
+}
+.IndividualPost_header span {
+  display: flex;
+  color: rgb(66, 66, 66);
+}
+
+.item-style {
+  font-weight: bold;
 }

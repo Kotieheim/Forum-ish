@@ -1,36 +1,28 @@
-.add-post-page input,
-.add-post-page label {
+.AddPost {
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
-.add-post-page {
-  text-align: center;
-  display: block;
-  height: 600px;
-  width: 500px;
-  border: 1px solid black;
+.AddPost_title input {
+  font-size: 22px;
+  border: 1px solid rgb(211, 188, 232);
+  border-radius: 4px;
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
 }
-.add-post-page button {
-  margin: 30px;
+.AddPost_content textarea {
+  font-size: 18px;
+  border: 1px solid rgb(211, 188, 232);
+  border-radius: 4px;
+  width: 80%;
+  height: 35vh;
+  padding: 12px;
+  margin-bottom: 20px;
 }
-.post-content {
-  display: block;
-  margin: 0 auto;
-  height: 400px;
-  width: 200px;
-}
-
-.AddPost_add-post-button {
-  color: grey;
-  text-decoration: none;
-  display: block;
-  margin: 10px auto;
-  text-align: center;
-  width: 150px;
-  font-size: 26px;
-  border: 2px solid black;
-}
-.AddPost_add-post-button a,
-.AddPost_add-post-button a:visited {
-  color: grey;
+.AddPost_button {
+  padding: 8px 30px;
+  width: auto;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
 }

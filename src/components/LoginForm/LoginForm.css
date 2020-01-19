@@ -11,3 +11,41 @@
   height: 300px;
   text-align: center;
 }
+/* .loginForm input,
+.login-form label {
+  display: block;
+} */
+
+.LoginForm {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.full_name {
+}
+.user_name input {
+  font-size: 18px;
+  border: 1px solid rgb(211, 188, 232);
+  border-radius: 4px;
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+.password input {
+  font-size: 18px;
+  border: 1px solid rgb(211, 188, 232);
+  border-radius: 4px;
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+.LoginPage_button {
+  padding: 8px 30px;
+  width: auto;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+}
+label {
+}
+input {
+}

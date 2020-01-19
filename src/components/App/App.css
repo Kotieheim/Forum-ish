@@ -1,10 +1,11 @@
 .App {
-  height: 100vh;
+  height: 100%;
+  background-color: rgb(216, 216, 216);
 }
 .App_main {
   display: block;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 250px;
 }
 
 .App_header {
@@ -16,7 +17,7 @@
   text-align: center;
   display: block;
   margin: 0 auto;
-  width: 700px;
+  /* width: 700px; */
   border-bottom: 2px solid black;
 }
 .Banner h1 {
@@ -28,4 +29,22 @@
   width: 200px;
   height: auto;
   padding: 12px;
+}
+.Banner_home_button {
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: fixed;
+  left: 10px;
+  top: 200px;
+}
+@media (min-width: 570px) {
+  .App_main {
+    max-width: 400px;
+  }
+}
+@media (min-width: 960px) {
+  .App_main {
+    max-width: 600px;
+  }
 }

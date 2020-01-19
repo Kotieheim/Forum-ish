@@ -3,10 +3,16 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./components/App/App";
+import { PostListProvider } from "./contexts/PostListContext";
+import { PostProvider } from "./contexts/PostContext";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <PostListProvider>
+      <PostProvider>
+        <App />
+      </PostProvider>
+    </PostListProvider>
   </BrowserRouter>,
 
   document.getElementById("root")

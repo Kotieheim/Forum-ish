@@ -1,24 +1,37 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import IndividualPost from "../../components/IndividualPost/IndividualPost";
-import posts from "../stores/PostStore";
+
 import "./PostListPage.css";
-import AddPost from "../../components/AddPost/AddPost";
+import PostListContext from "../../contexts/PostListContext";
+import PostApiService from "../../services/post-api-service";
+import { Link } from "react-router-dom";
 
 export class PostListPage extends Component {
+  static contextType = PostListContext;
+
+  componentDidMount() {
+    this.context.clearError();
+    PostApiService.getPosts()
+      .then(this.context.setPostList)
+      .catch(this.context.setError);
+  }
+  renderPosts() {
+    const { postList = [] } = this.context;
+    return postList.map(post => <IndividualPost key={post.id} post={post} />);
+  }
   render() {
-    console.log(posts);
+    const { error } = this.context;
     return (
-      <div>
-        <NavLink
-          to="/make-post"
-          type="button"
-          className="AddPost_add-post-button"
-        >
-          Make a post
-        </NavLink>
-        <IndividualPost posts={posts} />
-      </div>
+      <section className="PostListPage">
+        <header className="PostListPage_header">
+          <p>Post Feed</p>
+
+          <Link className="AddPost_button" to="/make-post">
+            Add post
+          </Link>
+        </header>
+        {error ? <p>An error has ocurred</p> : this.renderPosts()}
+      </section>
     );
   }
 }

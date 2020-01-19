@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import TokenService from "../../services/token-service";
 
 export class Header extends Component {
+  handleLogoutClick = () => {
+    TokenService.clearAuthToken();
+    this.setState({
+      isLoggedIn: false
+    });
+  };
   renderLogoutLink() {
     return (
       <div>
-        <Link to="/">Logout</Link>
+        <Link onClick={this.handleLogoutClick} to="/">
+          Logout
+        </Link>
       </div>
     );
   }
@@ -28,7 +37,9 @@ export class Header extends Component {
         <h1>
           <Link to="/">Forum-Ish</Link>
         </h1>
-        {this.renderLoginLink()}
+        {TokenService.hasAuthToken()
+          ? this.renderLogoutLink()
+          : this.renderLoginLink()}
       </nav>
     );
   }

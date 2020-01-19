@@ -1,36 +1,109 @@
 import React, { Component } from "react";
 import "./PostPage.css";
-import posts from "../stores/PostStore";
+import config from "../../config";
+import PostContext from "../../contexts/PostContext";
+import Moment from "moment";
+import CommentForm from "../../components/CommentForm/CommentForm";
+import PostApiService from "../../services/post-api-service";
 
 export class PostPage extends Component {
+  static defaultProps = {
+    match: { params: {} }
+  };
+
+  state = {
+    post: [],
+    comments: []
+  };
+  static contextType = PostContext;
+
+  componentDidMount() {
+    const { postId } = this.props.match.params;
+    fetch(`${config.API_ENDPOINT}/posts/${postId}`)
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e));
+        }
+        return res.json();
+      })
+      .then(post => {
+        this.setState({
+          post
+        });
+      });
+    fetch(`${config.API_ENDPOINT}/posts/${postId}/comments`)
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(e => Promise.reject(e));
+        }
+        return res.json();
+      })
+      .then(comments => {
+        this.setState({
+          comments
+        });
+      });
+  }
+  componentWillUnmount() {
+    this.context.clearPost();
+  }
+  renderPost() {
+    Moment.locale("en");
+    const { post } = this.state;
+
+    const name = getNestedObject(post, ["author", "user_name"]);
+    console.log(name);
+    return (
+      <section>
+        <header className="PostPage_header">
+          <div>
+            <h3>author</h3>
+
+            <h2>{name}</h2>
+          </div>
+          <div>
+            <h3>posted</h3>
+            <p>{Moment(post.date_created).format("MMM Do YYYY")}</p>
+          </div>
+        </header>
+        <h1 className="PostPage_title">{post.title}</h1>
+        <p className="PostPage_content">{post.content}</p>
+      </section>
+    );
+  }
+  renderComments() {
+    const { comments } = this.state;
+    console.log(comments);
+    return (
+      <div className="PostPage_comment-list">
+        <ul>
+          {comments.map(comment => (
+            <li key={comment.id} className="PostPage_comment">
+              <p className="PostPage_comment-text">{comment.text}</p>
+              <p className="PostPage_comment-user">{comment.user.user_name}</p>
+            </li>
+          ))}
+        </ul>
+        <CommentForm />
+      </div>
+    );
+  }
+
   render() {
-    console.log(posts);
+    console.log(this.context);
     return (
       <div>
-        <h2>Title</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus
-          consequuntur deserunt commodi, nobis qui inventore corrupti iusto
-          aliquid debitis unde non. Adipisci, pariatur. Molestiae, libero esse
-          hic adipisci autem neque?
-        </p>
-        <img
-          src="https://i.picsum.photos/id/434/400/300.jpg"
-          alt="placeholder"
-        />
-        <div className="Individual_post">
-          {posts.posts.map(item => {
-            return (
-              <div className="Individual_post_itm" key={item.title}>
-                <h4>{item.author.user_name}</h4>
-                <p>{item.content}</p>
-              </div>
-            );
-          })}
-        </div>
+        <div>{this.renderPost()}</div>
+        <div>{this.renderComments()}</div>
       </div>
     );
   }
 }
+const getNestedObject = (nestedObj, pathArr) => {
+  return pathArr.reduce(
+    (obj, key) => (obj && obj[key] !== "undefined" ? obj[key] : undefined),
+    nestedObj
+  );
+};
 
 export default PostPage;

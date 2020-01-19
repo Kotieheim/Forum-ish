@@ -5,8 +5,8 @@ import "./MakePostPage.css";
 export class MakePostPage extends Component {
   render() {
     return (
-      <div>
-        <h2>Post something! (or else)</h2>
+      <div className="MakePostPage">
+        <h2>Make a post!</h2>
         <AddPost />
       </div>
     );
