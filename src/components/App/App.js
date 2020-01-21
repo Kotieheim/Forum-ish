@@ -16,41 +16,13 @@ export class App extends Component {
     post: [],
     comments: []
   };
-  componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/posts`, {
-      headers: {
-        // Authorization: `Bearer ${TokenService.getAuthToken()}`,
-        "content-type": "application/json"
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(e => Promise.reject(e));
-        }
-        return res.json();
-      })
-      .then(post => {
-        console.log(post);
-        this.setState({
-          post
-        });
-      })
-      .catch(e => {
-        console.error(e);
-      });
-  }
   static getStateFromError(e) {
     console.error(e);
     return { hasError: true };
   }
-  handleLogin = () => {
-    this.setState({
-      isLoggedIn: true
-    });
-  };
+
   render() {
-    let { isLoggedIn, post } = this.state;
-    console.log(isLoggedIn);
+    let { isLoggedIn } = this.state;
     return (
       <div className="App">
         <header className="App_header">

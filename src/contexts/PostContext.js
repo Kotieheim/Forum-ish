@@ -5,6 +5,7 @@ export const nullPost = {
   tags: []
 };
 const PostContext = React.createContext({
+  isLoggedIn: false,
   post: nullPost,
   comments: [],
   error: null,
@@ -15,7 +16,8 @@ const PostContext = React.createContext({
   clearPost: () => {},
   setComments: () => {},
   addComment: () => {},
-  handleLogin: () => {}
+  handleLogin: () => {},
+  handleLogout: () => {}
 });
 
 export default PostContext;
@@ -36,11 +38,17 @@ export class PostProvider extends Component {
   setPost = post => {
     this.setState({ post });
   };
+  addPost = singlePost => {
+    this.setState({
+      post: [...this.state.post, singlePost]
+    });
+  };
   clearPost = () => {
     this.setPost(nullPost);
     this.setComments([]);
   };
   setComments = comments => {
+    console.log("set comments state");
     this.setState({ comments });
   };
   clearArticle = () => {
@@ -55,18 +63,25 @@ export class PostProvider extends Component {
       isLoggedIn: true
     });
   };
+  handleLogout = () => {
+    this.setState({
+      isLoggedIn: false
+    });
+  };
   render() {
     const value = {
-      post: this.state.posts,
+      post: this.state.post,
       comments: this.state.comments,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setPost: this.setPost,
+      addPost: this.addPost,
       setComments: this.setComments,
       clearPost: this.clearPost,
       addComment: this.addComment,
-      handleLogin: this.handleLogin
+      handleLogin: this.handleLogin,
+      handleLogout: this.handleLogout
     };
     return (
       <PostContext.Provider value={value}>

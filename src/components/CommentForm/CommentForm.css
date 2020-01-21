@@ -1,10 +1,9 @@
 .CommentForm textarea {
-  margin-top: 12%;
+  margin-top: 25%;
   box-sizing: border-box;
   border: 1px solid #ddd;
   display: block;
   font-size: 1.1em;
-  margin: 16 0 4;
   padding: 10px;
   text-align: left;
   width: 100%;

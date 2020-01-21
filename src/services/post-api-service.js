@@ -1,4 +1,5 @@
 import config from "../config";
+import TokenService from "../services/token-service";
 
 const PostApiService = {
   getPosts() {
@@ -19,7 +20,28 @@ const PostApiService = {
     return fetch(`${config.API_ENDPOINT}/posts/${postId}/comments`, {
       headers: {}
     }).then(res => {
-      !res.ok ? res.json().then(error => Promise.reject(error)) : res.json();
+      if (!res.ok) {
+        return res.json().then(error => Promise.reject(error));
+      }
+      return res.json();
+    });
+  },
+  postComment(postId, text) {
+    return fetch(`${config.API_ENDPOINT}/comments`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify({
+        post_id: postId,
+        text: text
+      })
+    }).then(res => {
+      if (!res.ok) {
+        return res.json().then(error => Promise.reject(error));
+      }
+      return res.json();
     });
   }
 };

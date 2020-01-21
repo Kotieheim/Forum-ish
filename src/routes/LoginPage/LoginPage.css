@@ -1,3 +1,11 @@
 .login-page {
   text-align: center;
 }
+.login-page a,
+.login-page a:visited {
+  text-decoration: none;
+  color: black;
+}
+.login-page a:hover {
+  color: teal;
+}

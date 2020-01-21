@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import TokenService from "../../services/token-service";
+import PostContext from "../../contexts/PostContext";
 
 export class Header extends Component {
+  static contextType = PostContext;
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
     this.setState({

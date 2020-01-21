@@ -1,8 +1,33 @@
 import React, { Component } from "react";
 import "./RegistrationForm.css";
-
+import AuthApiService from "../../services/auth-api-service";
 export class RegistrationForm extends Component {
+  static defaultProps = {
+    onRegistrationSuccess: () => {}
+  };
   state = { error: null };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { full_name, user_name, password } = e.target;
+
+    this.setState({ error: null });
+    AuthApiService.postUser({
+      user_name: user_name.value,
+      password: password.value,
+      full_name: full_name.value
+    })
+      .then(user => {
+        full_name.value = "";
+        user_name.value = "";
+        password.value = "";
+        this.props.onRegistrationSuccess();
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
+  };
+
   render() {
     const { error } = this.state;
     return (
@@ -11,7 +36,7 @@ export class RegistrationForm extends Component {
         <div className="full_name">
           <input
             required
-            name="Login_full_name"
+            name="full_name"
             autoComplete="fullname"
             placeholder="Full Name"
           />
@@ -21,7 +46,7 @@ export class RegistrationForm extends Component {
           <input
             required
             autoComplete="username"
-            name="Login_user_name"
+            name="user_name"
             placeholder="User Name"
           />
         </div>
@@ -29,7 +54,7 @@ export class RegistrationForm extends Component {
           <input
             required
             autoComplete="password"
-            name="Registration_password"
+            name="password"
             type="password"
             placeholder="Password"
           />

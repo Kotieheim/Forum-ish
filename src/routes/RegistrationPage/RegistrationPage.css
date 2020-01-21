@@ -1,3 +1,12 @@
 .Registration-page {
   text-align: center;
 }
+.Registration-page a,
+.Registration-page a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.Registration-page a:hover {
+  color: teal;
+}

@@ -29,7 +29,7 @@
   border-radius: 4px;
   width: 80%;
   padding: 12px;
-  margin-bottom: 20px;
+  margin: 12px 0;
 }
 .password input {
   font-size: 18px;
@@ -37,7 +37,7 @@
   border-radius: 4px;
   width: 80%;
   padding: 12px;
-  margin-bottom: 20px;
+  margin: 12px 0;
 }
 .LoginPage_button {
   padding: 8px 30px;
@@ -45,7 +45,13 @@
   border: 1px solid whitesmoke;
   border-radius: 4px;
 }
-label {
+.LoginPage_button {
+  padding: 8px 30px;
+  width: auto;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
 }
-input {
+.LoginPage_button:hover {
+  background-color: teal;
+  cursor: pointer;
 }
