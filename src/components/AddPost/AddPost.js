@@ -11,12 +11,9 @@ export class AddPost extends Component {
   static propTypes = {
     history: PropTypes.shape({
       push: PropTypes.func
-    }).isRequired
+    })
   };
   static contextType = PostContext;
-  state = {
-    error: null
-  };
   handleSubmit = e => {
     e.preventDefault();
     const { style, title, content } = e.target;
@@ -57,7 +54,6 @@ export class AddPost extends Component {
   };
 
   render() {
-    console.log(this.context);
     return (
       <form className="AddPost" onSubmit={this.handleSubmit}>
         <select required name="style" className="AddPost_style">
