@@ -1,5 +1,10 @@
 .Registration-page {
   text-align: center;
+  background-image: radial-gradient(circle, rgb(236, 127, 127), #ee5454);
+  border: 2px solid black;
+  margin-top: 15%;
+  border-radius: 15px;
+  padding: 15px;
 }
 .Registration-page a,
 .Registration-page a:visited {
@@ -8,5 +13,5 @@
 }
 
 .Registration-page a:hover {
-  color: teal;
+  text-decoration: underline;
 }

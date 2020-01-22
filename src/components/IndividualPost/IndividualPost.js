@@ -7,20 +7,24 @@ export class IndividualPost extends Component {
     Moment.locale("en");
     const { post } = this.props;
     return (
-      <Link to={`/post/${post.id}`} className="IndividualPost">
-        <header className="IndividualPost_header">
-          <span className="item-author">author: {post.author.user_name}</span>
-          <span>{Moment(post.date_created).format("MMM do YYYY")}</span>
-          <footer className="IndividualItem_footer">
-            <h2 className="IndividualPost_title">{post.title}</h2>
-            <span className="item-style">topic: {post.style}</span>
-            <span className="item-comments">
-              comments: {post.number_of_comments}
-            </span>
-            <p>Read more...</p>
-          </footer>
-        </header>
-      </Link>
+      <div className="panel">
+        <Link to={`/post/${post.id}`} className="IndividualPost">
+          <header className="IndividualPost_header">
+            <div className="text top-left">
+              <span>author: {post.author.user_name}</span>
+              <span>{Moment(post.date_created).format("MMM do YYYY")}</span>
+            </div>
+            <footer className="IndividualItem_footer">
+              <h2 className="IndividualPost_title">{post.title}</h2>
+              <div className="text bottom-right">
+                <span>topic: {post.style}</span>
+                <span>comments: {post.number_of_comments}</span>
+              </div>
+              <p className="read-more">Read more...</p>
+            </footer>
+          </header>
+        </Link>
+      </div>
     );
   }
 }

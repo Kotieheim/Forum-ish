@@ -1,5 +1,14 @@
 .login-page {
   text-align: center;
+  background-image: radial-gradient(
+    circle,
+    rgb(152, 251, 152),
+    rgb(154, 205, 50)
+  );
+  border: 2px solid black;
+  margin-top: 15%;
+  border-radius: 15px;
+  padding: 15px;
 }
 .login-page a,
 .login-page a:visited {
@@ -7,5 +16,5 @@
   color: black;
 }
 .login-page a:hover {
-  color: teal;
+  text-decoration: underline;
 }

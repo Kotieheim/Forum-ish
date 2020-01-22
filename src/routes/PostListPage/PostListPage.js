@@ -24,13 +24,15 @@ export class PostListPage extends Component {
     return (
       <section className="PostListPage">
         <header className="PostListPage_header">
-          <p>Post Feed</p>
+          <p className="Post_feed">Post Feed</p>
 
           <Link className="AddPost_button" to="/make-post">
             Add post
           </Link>
         </header>
-        {error ? <p>An error has ocurred</p> : this.renderPosts()}
+        <div className="PostListPage_panels">
+          {error ? <p>An error has ocurred</p> : this.renderPosts()}
+        </div>
       </section>
     );
   }

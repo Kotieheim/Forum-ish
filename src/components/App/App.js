@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, withRouter } from "react-router-dom";
 import Header from "../Header/Header";
 import PostListPage from "../../routes/PostListPage/PostListPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
@@ -7,8 +7,7 @@ import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
 import PostPage from "../../routes/PostPage/PostPage";
 import MakePostPage from "../../routes/MakePostPage/MakePostPage";
 import "./App.css";
-import config from "../../config";
-
+import PrivateRoute from "../Utils/PrivateRoute";
 export class App extends Component {
   state = {
     isLoggedIn: false,
@@ -30,14 +29,13 @@ export class App extends Component {
         </header>
 
         <div className="Banner">
-          <Link className="Banner_home_button" to="/">
-            Return Home
-          </Link>
-          <h1>Forum-Ish</h1>
+          <Link className="fa fa-chevron-left Banner_home_button" to="/"></Link>
+          <h1>FORUM-ISH</h1>
           <p>
-            When you need to get something off your chest and someone can catch
+            When you need to get something off your chest and someone'll catch
             it
           </p>
+          <span>* users must register/login to post or comment</span>
         </div>
         <main className="App_main">
           <Switch>
@@ -45,7 +43,7 @@ export class App extends Component {
             <Route path={"/login"} component={LoginPage} />
             <Route path={"/register"} component={RegistrationPage} />
             <Route path={"/post/:postId"} component={PostPage} />
-            <Route path={"/make-post"} component={MakePostPage} />
+            <PrivateRoute path={"/make-post"} component={MakePostPage} />
           </Switch>
         </main>
       </div>
@@ -53,4 +51,4 @@ export class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

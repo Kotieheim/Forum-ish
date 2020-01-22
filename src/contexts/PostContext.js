@@ -38,9 +38,10 @@ export class PostProvider extends Component {
   setPost = post => {
     this.setState({ post });
   };
-  addPost = singlePost => {
+  addPost = posts => {
+    console.log(this.state, posts);
     this.setState({
-      post: [...this.state.post, singlePost]
+      post: [...this.state.post, posts]
     });
   };
   clearPost = () => {

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./AddPost.css";
 import config from "../../config";
 import TokenService from "../../services/token-service";
 import PostContext from "../../contexts/PostContext";
 import PropTypes from "prop-types";
-
-// SET UP ROUTE TO POST ON SERVER
 
 export class AddPost extends Component {
   static propTypes = {
@@ -24,7 +23,6 @@ export class AddPost extends Component {
       content: content.value,
       date_created: new Date()
     };
-    console.log(post);
     this.setState({ error: null });
     fetch(`${config.API_ENDPOINT}/posts`, {
       method: "POST",
@@ -35,16 +33,19 @@ export class AddPost extends Component {
       }
     })
       .then(res => {
+        console.log(res);
         if (!res.ok) {
           return res.json().then(error => Promise.reject(error));
         }
-        return res.json();
+        return res;
       })
       .then(data => {
         style.value = "";
         title.value = "";
         content.value = "";
-        this.context.addPost(data);
+        this.setState({
+          post: data
+        });
         this.props.history.push("/");
       })
       .catch(error => {
@@ -54,6 +55,7 @@ export class AddPost extends Component {
   };
 
   render() {
+    console.log(this.context);
     return (
       <form className="AddPost" onSubmit={this.handleSubmit}>
         <select required name="style" className="AddPost_style">
@@ -66,14 +68,15 @@ export class AddPost extends Component {
         <div className="AddPost_title">
           <input name="title" placeholder="Title" />
         </div>
-        <div className="AddPost_content">
+        <div>
           <textarea
+            className="AddPost_content"
             required
             name="content"
             placeholder="Type something meaingful here, or not. What do I care I'm some text, not a cop."
           />
         </div>
-        <button className="AddPost_button" type="submit">
+        <button className="AddPost_submit" type="submit">
           Make post
         </button>
       </form>
@@ -81,6 +84,4 @@ export class AddPost extends Component {
   }
 }
 
-export default AddPost;
-
-// 801 369 7243
+export default withRouter(AddPost);

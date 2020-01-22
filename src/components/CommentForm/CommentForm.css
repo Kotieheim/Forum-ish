@@ -1,7 +1,12 @@
-.CommentForm textarea {
-  margin-top: 25%;
+.CommentForm_text-form {
+  margin-top: 30%;
+}
+
+.CommentForm_text {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 2px solid black;
   display: block;
   font-size: 1.1em;
   padding: 10px;
@@ -11,13 +16,53 @@
 }
 .CommentForm {
   width: 100%;
+  margin-bottom: 15%;
 }
 
 .CommentForm_button {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 2px solid black;
   display: block;
   margin: 5px auto;
   padding: 8px 30px;
   width: auto;
-  border: 1px solid whitesmoke;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 4px;
+  box-shadow: 0px 7px 21px -8px rgba(0, 0, 0, 0.7);
+}
+
+.CommentForm_button:hover {
+  background-color: #4c69f6;
+  cursor: pointer;
+}
+.CommentForm_not-logged-in {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  margin: 30% auto 10%;
+  width: 220px;
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  display: block;
+  padding: 8px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  box-shadow: 0px 7px 21px -8px rgba(0, 0, 0, 0.7);
+}
+.CommentForm_not-logged-in,
+.CommentForm_not-logged-in:visited {
+  color: black;
+  text-decoration: none;
+}
+.CommentForm_not-logged-in:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 570px) {
+}
+@media (min-width: 960px) {
 }

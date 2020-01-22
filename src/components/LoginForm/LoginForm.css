@@ -52,6 +52,6 @@
   border-radius: 4px;
 }
 .LoginPage_button:hover {
-  background-color: teal;
+  background-color: #4c69f6;
   cursor: pointer;
 }

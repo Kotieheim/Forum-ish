@@ -7,10 +7,13 @@
 .Header h1 a {
   font-size: 26px;
   text-decoration: none;
+  color: #f6db35;
+  letter-spacing: 2px;
 }
 
 .Header a {
-  color: rgb(219, 219, 219);
+  color: #f6db35;
+  text-decoration: none;
 }
 .Header_not-logged-in {
   display: flex;

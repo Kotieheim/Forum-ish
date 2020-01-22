@@ -4,7 +4,8 @@ import config from "../../config";
 import PostContext from "../../contexts/PostContext";
 import Moment from "moment";
 import CommentForm from "../../components/CommentForm/CommentForm";
-import PostApiService from "../../services/post-api-service";
+import TokenService from "../../services/token-service";
+import { Link } from "react-router-dom";
 
 export class PostPage extends Component {
   static defaultProps = {
@@ -43,8 +44,8 @@ export class PostPage extends Component {
     console.log(post);
     console.log(comments);
     return (
-      <div>
-        <section>
+      <div className="PostPage">
+        <section className="PostPage_section">
           <header className="PostPage_header">
             <div>
               <h3>author: </h3>
@@ -59,7 +60,14 @@ export class PostPage extends Component {
           <h1 className="PostPage_title">{post.title}</h1>
           <p className="PostPage_content">{post.content}</p>
         </section>
-        <CommentForm />
+        {TokenService.hasAuthToken() ? (
+          <CommentForm />
+        ) : (
+          <Link to="/login" className="CommentForm_not-logged-in">
+            Log In to comment
+          </Link>
+        )}
+        <h4 className="Comment_list">Comment list</h4>
         <ul className="PostPage_comment-list">
           {comments &&
             comments.map(function(item) {
@@ -71,6 +79,7 @@ export class PostPage extends Component {
               );
             })}
         </ul>
+        )}
       </div>
     );
   }

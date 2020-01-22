@@ -1,50 +1,87 @@
 .App {
   height: 100%;
-  background-color: rgb(216, 216, 216);
+}
+.App p {
+  margin: 0;
 }
 .App_main {
   display: block;
   margin: 0 auto;
   max-width: 250px;
 }
+.App_logo {
+  height: 100px;
+  margin-top: 5px;
+}
 
 .App_header {
   padding: 0 20px;
-  background-color: rgb(51, 51, 54);
+  background-color: #4c69f6;
 }
 
 .Banner {
+  padding: 15px 0;
+  width: 100%;
+  background-color: #1a35be;
   text-align: center;
   display: block;
   margin: 0 auto;
-  /* width: 700px; */
-  border-bottom: 2px solid black;
+  box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.3),
+    inset 0 -8px 8px -8px rgba(0, 0, 0, 0.3);
 }
+
 .Banner h1 {
-  font-size: 36px;
+  margin: 10px 0;
+  font-size: 50px;
+  color: #e70303;
+  text-shadow: -4px 4px 2px #000000;
 }
-.AddPost-btn {
-  display: block;
-  margin: 12px auto;
-  width: 200px;
-  height: auto;
-  padding: 12px;
+.Banner p {
+  padding: 015px;
+  font-size: 14px;
+  color: rgb(221, 221, 221);
+}
+.Banner span {
+  padding: 015px;
+  font-size: 12px;
+  color: rgb(221, 221, 221);
+}
+.Banner_home_button,
+.Banner_home_button:visited {
+  background-color: #1a35be;
+  color: #e0e0e0;
+  border-radius: 50%;
+}
+.Banner_home_button:hover {
+  background-color: #4c69f6;
 }
 .Banner_home_button {
+  padding: 5px;
   text-decoration: none;
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: fixed;
-  left: 10px;
-  top: 200px;
+  left: 3px;
+  top: 270px;
 }
 @media (min-width: 570px) {
   .App_main {
     max-width: 400px;
   }
+  .App_logo {
+    height: 150px;
+  }
+  .Banner_home_button {
+    padding: 12px;
+    left: 8px;
+  }
 }
 @media (min-width: 960px) {
   .App_main {
     max-width: 600px;
+  }
+  .Banner_home_button {
+    padding: 18px;
+    left: 38px;
   }
 }

@@ -3,7 +3,6 @@ import PostContext from "../../contexts/PostContext";
 import "./CommentForm.css";
 import config from "../../config";
 import TokenService from "../../services/token-service";
-import PostApiService from "../../services/post-api-service";
 
 export class CommentForm extends Component {
   static contextType = PostContext;
@@ -45,8 +44,9 @@ export class CommentForm extends Component {
     console.log(this.context);
     return (
       <form className="CommentForm" onSubmit={this.handleSubmit}>
-        <div className="text">
+        <div className="CommentForm_text-form">
           <textarea
+            className="CommentForm_text"
             required
             aria-label="Comment on this post..."
             placeholder="Comment on this post..."
