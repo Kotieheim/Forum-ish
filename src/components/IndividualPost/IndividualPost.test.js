@@ -5,24 +5,29 @@ import IndividualPost from "./IndividualPost";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  const stubPost = [
-    {
-      id: 1,
-      style: "News",
-      title: "Test Title",
-      content: "Test content",
-
-      number_of_comments: 2,
-      author: {
-        id: 1,
-        user_name: "dunder",
-        full_name: "dunder mifflin"
-      }
+  const props = {
+    match: { params: {} },
+    history: {
+      push: () => {}
     }
-  ];
+  };
+  const stubPost = {
+    id: 1,
+    style: "News",
+    title: "Test Title",
+    content: "Test content",
+
+    number_of_comments: 2,
+    author: {
+      id: 1,
+      user_name: "dunder",
+      full_name: "dunder mifflin"
+    }
+  };
+
   ReactDOM.render(
     <BrowserRouter>
-      <IndividualPost post={stubPost} />
+      <IndividualPost post={stubPost} {...props} />
     </BrowserRouter>,
     div
   );

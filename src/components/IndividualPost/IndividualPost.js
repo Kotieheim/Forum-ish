@@ -29,4 +29,8 @@ export class IndividualPost extends Component {
   }
 }
 
+IndividualPost.defaultProps = {
+  post: []
+};
+
 export default IndividualPost;
