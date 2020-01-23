@@ -8,6 +8,7 @@ import PostPage from "../../routes/PostPage/PostPage";
 import MakePostPage from "../../routes/MakePostPage/MakePostPage";
 import "./App.css";
 import PrivateRoute from "../Utils/PrivateRoute";
+
 export class App extends Component {
   state = {
     isLoggedIn: false,
