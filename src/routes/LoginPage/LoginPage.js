@@ -28,8 +28,8 @@ export class LoginPage extends Component {
           <h2>Dummy Logins</h2>
           <div className="Dummy_logins">
             <div className="Dummy_credentials">
-              <p>Username:</p>
-              <p>Password:</p>
+              <p>jules</p>
+              <p>L0veP4per!</p>
             </div>
 
             <div className="Dummy_credentials">
