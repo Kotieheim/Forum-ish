@@ -33,15 +33,8 @@ export class CommentForm extends Component {
         this.context.addComment(commentData);
         text.value = "";
       });
-    // PostApiService.postComment(post.id, text.value)
-    //   .then(this.context.addComment)
-    //   .then(() => {
-    //     text.value = "";
-    //   })
-    //   .catch(this.context.setError);
   };
   render() {
-    console.log(this.context);
     return (
       <form className="CommentForm" onSubmit={this.handleSubmit}>
         <div className="CommentForm_text-form">

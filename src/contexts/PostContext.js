@@ -39,7 +39,6 @@ export class PostProvider extends Component {
     this.setState({ post });
   };
   addPost = posts => {
-    console.log(this.state, posts);
     this.setState({
       post: [...this.state.post, posts]
     });
@@ -49,7 +48,6 @@ export class PostProvider extends Component {
     this.setComments([]);
   };
   setComments = comments => {
-    console.log("set comments state");
     this.setState({ comments });
   };
   clearArticle = () => {

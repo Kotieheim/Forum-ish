@@ -3,7 +3,18 @@
   "alias": "koties-forum-ish",
   "name": "forum-ish",
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
-  ]
+    {
+      "src": "^/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ],
+  "build": {
+    "env": {
+      "REACT_APP_API_ENDPOINT": "https://damp-ocean-50804.herokuapp.com/api"
+    }
+  }
 }

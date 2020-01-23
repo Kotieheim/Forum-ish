@@ -33,7 +33,6 @@ export class AddPost extends Component {
       }
     })
       .then(res => {
-        console.log(res);
         if (!res.ok) {
           return res.json().then(error => Promise.reject(error));
         }
@@ -55,7 +54,6 @@ export class AddPost extends Component {
   };
 
   render() {
-    console.log(this.context);
     return (
       <form className="AddPost" onSubmit={this.handleSubmit}>
         <select required name="style" className="AddPost_style">

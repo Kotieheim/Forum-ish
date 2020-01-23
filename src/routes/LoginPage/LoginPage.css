@@ -18,3 +18,26 @@
 .login-page a:hover {
   text-decoration: underline;
 }
+
+.Dummy_logins {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.Dummy_container {
+  background-image: radial-gradient(
+    circle,
+    rgb(128, 128, 252),
+    rgb(76, 76, 247)
+  );
+  border: 2px solid black;
+  margin-top: 15%;
+  border-radius: 15px;
+  padding: 15px;
+}
+.Dummy_container h2 {
+  text-align: center;
+  color: #e70303;
+  text-shadow: -2px 2px 1px #000000;
+}

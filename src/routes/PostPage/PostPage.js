@@ -21,28 +21,17 @@ export class PostPage extends Component {
       fetch(`${config.API_ENDPOINT}/posts/${postId}/comments`)
     ])
       .then(([postRes, commentsRes]) => {
-        console.log(postRes, commentsRes);
         return Promise.all([postRes.json(), commentsRes.json()]);
       })
       .then(([postData, commentsData]) => {
-        console.log(postData, commentsData);
         this.context.setPost(postData);
         this.context.setComments(commentsData);
       });
-    // console.log(this.context);
-    // this.context.clearError();
-    // PostApiService.getFullPost(postId)
-    //   .then(this.context.setPost)
-    //   .catch(this.context.setError);
-    // PostApiService.getPostComments(postId)
-    //   .then(this.context.setComments)
-    //   .catch(this.context.setError);
   }
 
   render() {
     const { post, comments } = this.context;
-    console.log(post);
-    console.log(comments);
+
     return (
       <div className="PostPage">
         <section className="PostPage_section">
@@ -84,12 +73,5 @@ export class PostPage extends Component {
     );
   }
 }
-
-// const getNestedObject = (nestedObj, pathArr) => {
-//   return pathArr.reduce(
-//     (obj, key) => (obj && obj[key] !== "undefined" ? obj[key] : undefined),
-//     nestedObj
-//   );
-// };
 
 export default PostPage;
