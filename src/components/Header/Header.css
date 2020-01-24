@@ -5,6 +5,7 @@
   justify-content: space-between;
 }
 .Header h1 a {
+  font-family: "Bangers", cursive;
   font-size: 26px;
   text-decoration: none;
   color: #f6db35;

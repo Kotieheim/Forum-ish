@@ -11,10 +11,6 @@
   height: 300px;
   text-align: center;
 }
-/* .loginForm input,
-.login-form label {
-  display: block;
-} */
 
 .LoginForm {
   width: 100%;
@@ -23,7 +19,7 @@
 }
 .user_name input {
   font-size: 18px;
-  border: 1px solid rgb(211, 188, 232);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 4px;
   width: 80%;
   padding: 12px;
@@ -31,7 +27,7 @@
 }
 .password input {
   font-size: 18px;
-  border: 1px solid rgb(211, 188, 232);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 4px;
   width: 80%;
   padding: 12px;

@@ -1,7 +1,7 @@
 .App {
   height: 100%;
 }
-.App p {
+.App .Banner_saying {
   margin: 0;
 }
 .App_main {
@@ -16,13 +16,13 @@
 
 .App_header {
   padding: 0 20px;
-  background-color: #4c69f6;
+  background-color: #183efd;
 }
 
 .Banner {
   padding: 15px 0;
   width: 100%;
-  background-color: #1a35be;
+  background-color: #031881;
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -32,8 +32,9 @@
 
 .Banner h1 {
   margin: 10px 0;
+  font-family: "Bangers", cursive;
   font-size: 50px;
-  color: #e70303;
+  color: #ff0000;
   text-shadow: -4px 4px 2px #000000;
 }
 .Banner p {

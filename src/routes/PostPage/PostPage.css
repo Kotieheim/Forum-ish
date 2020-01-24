@@ -2,14 +2,15 @@
   border: 2px solid black;
   border-radius: 30px;
   margin-top: 30px;
-  background-image: radial-gradient(circle, rgb(247, 93, 93), red);
+  background-image: radial-gradient(circle, rgb(253, 48, 48), red);
   padding: 30px;
 }
 .Comment_list {
+  display: block;
   border: 2px solid black;
   width: 150px;
   text-align: center;
-  background-color: white;
+  background-color: #ececec;
   font-size: 20px;
   font-weight: lighter;
   margin: 0 auto;
@@ -18,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  background-color: #fff;
+  background-color: #ececec;
   border: solid 2px #000;
   padding: 4px;
   transform: skew(-10deg);
@@ -33,15 +34,16 @@
 }
 .PostPage_title {
   text-align: center;
-  color: #ffffff;
+  color: #ececec;
   font-weight: lighter;
-  text-shadow: -4px 4px 2px #000000;
+  text-shadow: -2px 2px 1px #000000;
   letter-spacing: 2px;
 }
 .PostPage_content {
-  background-color: #fff;
+  background-color: #ececec;
   border: solid 2px #000;
   padding: 3px 10px;
+  line-height: 1.5;
 }
 .PostPage_header h3 {
   text-decoration: underline;
@@ -60,7 +62,7 @@
 }
 
 .PostPage_comment {
-  padding: 20px;
+  padding: 0 15px;
   height: 100%;
   transform: skew(5deg);
 }
@@ -68,11 +70,13 @@
 .PostPage_comment-text {
   word-wrap: break-word;
   padding: 6px;
-  background-color: #fff;
+  background-color: #ececec;
   border: 3px solid rgb(0, 0, 0);
+  line-height: 1.4;
 }
 
 .PostPage_comment-user {
+  font-family: "Bangers", cursive;
   padding-top: 6px;
   font-size: 18px;
   color: #f6db35;

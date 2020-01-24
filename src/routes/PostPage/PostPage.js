@@ -37,7 +37,7 @@ export class PostPage extends Component {
         <section className="PostPage_section">
           <header className="PostPage_header">
             <div>
-              <h3>author: </h3>
+              <h2>author: </h2>
 
               <h2>{post.author.user_name}</h2>
             </div>
@@ -56,7 +56,7 @@ export class PostPage extends Component {
             Log In to comment
           </Link>
         )}
-        <h4 className="Comment_list">Comment list</h4>
+        <span className="Comment_list">Comment list</span>
         <ul className="PostPage_comment-list">
           {comments &&
             comments.map(function(item) {

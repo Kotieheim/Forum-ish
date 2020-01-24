@@ -37,26 +37,25 @@ export class LoginForm extends Component {
       <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
         <div role="alert">{error && <p className="error_red">{error}</p>}</div>
         <div className="user_name">
-          {/* <label required name="user_name" htmlFor="Login_user_name">
-            User name
-          </label> */}
+          <label aria-label="password" htmlFor="username"></label>
           <input
             required
             autoComplete="username"
             name="user_name"
-            placeholder="User Name"
+            id="username"
+            placeholder="user name"
           />
         </div>
         <div className="password">
-          {/* <label name="password" type="password" htmlFor="Login_password">
-            Password
-          </label> */}
+          <label aria-label="password" htmlFor="password"></label>
+
           <input
             required
             autoComplete="password"
             name="password"
             type="password"
-            placeholder="Password"
+            placeholder="password"
+            id="password"
           />
         </div>
         <button

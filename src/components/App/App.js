@@ -25,18 +25,26 @@ export class App extends Component {
     let { isLoggedIn } = this.state;
     return (
       <div className="App">
-        <header className="App_header">
+        <header role="banner" className="App_header">
           <Header isLoggedIn={isLoggedIn} />
         </header>
 
-        <div className="Banner">
-          <Link className="fa fa-chevron-left Banner_home_button" to="/"></Link>
-          <h1>FORUM-ISH</h1>
-          <p>
+        <div role="contentinfo" className="Banner">
+          <Link
+            value="back home"
+            role="button"
+            className="fa fa-chevron-left Banner_home_button"
+            to="/"
+            aria-label="home"
+          ></Link>
+          <h1 className="Banner_title">FORUM-ISH</h1>
+          <p className="Banner_saying">
             When you need to get something off your chest and someone'll catch
             it
           </p>
-          <span>* users must register/login to post or comment</span>
+          <span className="Banner_instructions">
+            * users must register/login to post or comment
+          </span>
         </div>
         <main className="App_main">
           <Switch>

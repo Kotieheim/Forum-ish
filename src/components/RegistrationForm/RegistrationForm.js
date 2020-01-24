@@ -34,25 +34,31 @@ export class RegistrationForm extends Component {
       <form className="RegisterationForm" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p className="error_red">{error}</p>}</div>
         <div className="full_name">
+          <label aria-label="form input" htmlFor="fullname"></label>
           <input
             required
             name="full_name"
             autoComplete="fullname"
             placeholder="Full Name"
+            id="fullname"
           />
         </div>
 
         <div className="user_name">
+          <label aria-label="form input" htmlFor="username"></label>
           <input
             required
+            id="username"
             autoComplete="username"
             name="user_name"
             placeholder="User Name"
           />
         </div>
         <div className="password">
+          <label aria-label="form input" htmlFor="password"></label>
           <input
             required
+            id="password"
             autoComplete="password"
             name="password"
             type="password"

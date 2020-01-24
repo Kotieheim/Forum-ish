@@ -67,7 +67,9 @@ export class AddPost extends Component {
           <input name="title" placeholder="Title" />
         </div>
         <div>
+          <label htmlFor="content"></label>
           <textarea
+            id="content"
             className="AddPost_content"
             required
             name="content"

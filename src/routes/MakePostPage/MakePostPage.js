@@ -6,7 +6,7 @@ export class MakePostPage extends Component {
   render() {
     return (
       <div className="MakePostPage">
-        <h2>Make a post!</h2>
+        <h2 className="MakePost_title">Make a post!</h2>
         <AddPost />
       </div>
     );

@@ -33,8 +33,8 @@ export class LoginPage extends Component {
             </div>
 
             <div className="Dummy_credentials">
-              <p>Kodes</p>
-              <p>P@ssw0rd!</p>
+              <p>kodes</p>
+              <p>P@ssw0rd</p>
             </div>
             <div className="Dummy_credentials">
               <p>dunder</p>

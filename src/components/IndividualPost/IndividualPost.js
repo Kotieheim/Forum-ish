@@ -6,13 +6,18 @@ export class IndividualPost extends Component {
   render() {
     Moment.locale("en");
     const { post } = this.props;
+    console.log(post);
     return (
       <div className="panel">
-        <Link to={`/post/${post.id}`} className="IndividualPost">
+        <Link
+          aria-label="conversation post"
+          to={`/post/${post.id}`}
+          className="IndividualPost"
+        >
           <header className="IndividualPost_header">
             <div className="text top-left">
               <span>author: {post.author.user_name}</span>
-              <span>{Moment(post.date_created).format("MMM do YYYY")}</span>
+              {/* <span>{Moment(post.date_created).format("MMM do YYYY")}</span> */}
             </div>
             <footer className="IndividualItem_footer">
               <h2 className="IndividualPost_title">{post.title}</h2>

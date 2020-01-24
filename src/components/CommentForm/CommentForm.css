@@ -22,7 +22,7 @@
 .CommentForm_button {
   font-family: "Bangers", cursive;
   letter-spacing: 1px;
-  background-color: #ffffff;
+  background-color: #ececec;
   border: 2px solid black;
   display: block;
   margin: 5px auto;
@@ -45,7 +45,7 @@
   width: 220px;
   font-family: "Bangers", cursive;
   letter-spacing: 1px;
-  background-color: #ffffff;
+  background-color: #ececec;
   border: 2px solid black;
   display: block;
   padding: 8px;

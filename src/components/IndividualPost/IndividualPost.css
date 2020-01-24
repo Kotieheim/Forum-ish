@@ -6,10 +6,7 @@
   width: 100%;
   text-decoration: none;
 }
-/* .IndividualPost_header {
-  background-color: #e1b382;
-  text-decoration: none;
-} */
+
 .IndividualPost_header span {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +26,8 @@
   padding: 3px 10px;
 }
 .top-left {
-  width: 100px;
+  text-align: center;
+  width: 120px;
   left: 10px;
   position: relative;
   top: 4px;
@@ -44,9 +42,14 @@
   transform: skew(-15deg);
 }
 .read-more {
+  margin: 1px auto;
+  border: 1px solid black;
+  width: 100px;
+  background-color: #e0e0e0;
   text-align: center;
   position: relative;
   bottom: 2px;
+  transform: skew(10deg);
 }
 .panel {
   border: 2px solid black;
