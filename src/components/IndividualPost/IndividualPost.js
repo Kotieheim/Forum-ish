@@ -6,7 +6,7 @@ export class IndividualPost extends Component {
   render() {
     Moment.locale("en");
     const { post } = this.props;
-    console.log(post);
+
     return (
       <div className="panel">
         <Link
