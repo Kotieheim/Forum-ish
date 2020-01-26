@@ -20,7 +20,7 @@
 }
 
 .Banner {
-  padding: 15px 0;
+  padding: 6px 0;
   width: 100%;
   background-color: #031881;
   text-align: center;
@@ -30,20 +30,26 @@
     inset 0 -8px 8px -8px rgba(0, 0, 0, 0.3);
 }
 
-.Banner h1 {
+.Banner_title {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+
+/* .Banner h1 {
   margin: 10px 0;
   font-family: "Bangers", cursive;
   font-size: 50px;
   color: #ff0000;
   text-shadow: -4px 4px 2px #000000;
-}
+} */
 .Banner p {
-  padding: 015px;
+  padding: 15px;
   font-size: 14px;
   color: rgb(221, 221, 221);
 }
 .Banner span {
-  padding: 015px;
+  padding: 15px;
   font-size: 12px;
   color: rgb(221, 221, 221);
 }
@@ -63,7 +69,7 @@
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: fixed;
-  left: 3px;
+  left: 4px;
   top: 270px;
 }
 @media (min-width: 570px) {
@@ -77,6 +83,12 @@
     padding: 12px;
     left: 8px;
   }
+  .Banner_title {
+    width: 350px;
+  }
+  .Banner_home_button {
+    top: 40%;
+  }
 }
 @media (min-width: 960px) {
   .App_main {
@@ -85,5 +97,8 @@
   .Banner_home_button {
     padding: 18px;
     left: 38px;
+  }
+  .Banner_title {
+    width: 420px;
   }
 }

@@ -56,12 +56,14 @@ export class AddPost extends Component {
   render() {
     return (
       <form className="AddPost" onSubmit={this.handleSubmit}>
+        <label htmlFor="style" className="AddPost_topic">
+          Choose a topic:
+        </label>
         <select required name="style" className="AddPost_style">
-          <option value={null}>Topic Style</option>
+          <option>Misc</option>
           <option>Music</option>
           <option>School</option>
           <option>News</option>
-          <option>Misc</option>
         </select>
         <div className="AddPost_title">
           <input name="title" placeholder="Title" />

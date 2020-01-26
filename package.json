@@ -25,7 +25,7 @@
     "predeploy": "npm run build",
     "deploy": "now ./build",
     "eject": "react-scripts eject",
-    "postdeploy": "now alias -A ./build/now.json"
+    "postdeploy": "now --prod -A ./build/now.json"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -58,3 +58,13 @@
   padding: 8px;
   margin-bottom: 20px;
 }
+.AddPost_topic {
+  display: block;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  padding: 4px;
+  width: 130px;
+  background-color: #ffffff;
+  text-align: center;
+  transform: skew(10deg);
+}

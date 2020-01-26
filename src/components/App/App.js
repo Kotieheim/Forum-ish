@@ -8,6 +8,7 @@ import PostPage from "../../routes/PostPage/PostPage";
 import MakePostPage from "../../routes/MakePostPage/MakePostPage";
 import "./App.css";
 import PrivateRoute from "../Utils/PrivateRoute";
+import bannerlogo from "../../images/bannerlogo.png";
 
 export class App extends Component {
   state = {
@@ -37,14 +38,9 @@ export class App extends Component {
             to="/"
             aria-label="home"
           ></Link>
-          <h1 className="Banner_title">FORUM-ISH</h1>
-          <p className="Banner_saying">
-            When you need to get something off your chest and someone'll catch
-            it
-          </p>
-          <span className="Banner_instructions">
-            * users must register/login to post or comment
-          </span>
+          {/* <h1 className="Banner_title">FORUM-ISH</h1> */}
+          <img className="Banner_title" src={bannerlogo} alt="forum-ish logo" />
+          <p className="Banner_saying">register or log in to post/comment</p>
         </div>
         <main className="App_main">
           <Switch>

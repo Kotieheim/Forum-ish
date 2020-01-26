@@ -6,6 +6,7 @@
   padding: 30px;
 }
 .Comment_list {
+  font-family: "Bangers", cursive;
   display: block;
   border: 2px solid black;
   width: 150px;
