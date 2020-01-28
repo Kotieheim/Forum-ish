@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Link, withRouter } from "react-router-dom";
 import Header from "../Header/Header";
+import TokenService from "../../services/token-service";
 import PostListPage from "../../routes/PostListPage/PostListPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
 import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
@@ -38,9 +39,13 @@ export class App extends Component {
             to="/"
             aria-label="home"
           ></Link>
-          {/* <h1 className="Banner_title">FORUM-ISH</h1> */}
+
           <img className="Banner_title" src={bannerlogo} alt="forum-ish logo" />
-          <p className="Banner_saying">register or log in to post/comment</p>
+          {TokenService.hasAuthToken() ? (
+            <p className="Banner_saying">{""}</p>
+          ) : (
+            <p className="Banner_saying">register or log in to post/comment</p>
+          )}
         </div>
         <main className="App_main">
           <Switch>
