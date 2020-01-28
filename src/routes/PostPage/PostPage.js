@@ -68,7 +68,6 @@ export class PostPage extends Component {
               );
             })}
         </ul>
-        )}
       </div>
     );
   }
