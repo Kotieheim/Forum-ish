@@ -5,7 +5,7 @@ import TokenService from "../../services/token-service";
 import PostListPage from "../../routes/PostListPage/PostListPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
 import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
-import PostPage from "../../routes/PostPage/PostPage";
+import PostPage from "../PostPage/PostPage";
 import MakePostPage from "../../routes/MakePostPage/MakePostPage";
 import "./App.css";
 import PrivateRoute from "../Utils/PrivateRoute";

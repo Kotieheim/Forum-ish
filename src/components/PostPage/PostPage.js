@@ -3,7 +3,7 @@ import "./PostPage.css";
 import config from "../../config";
 import PostContext from "../../contexts/PostContext";
 import Moment from "moment";
-import CommentForm from "../../components/CommentForm/CommentForm";
+import CommentForm from "../CommentForm/CommentForm";
 import TokenService from "../../services/token-service";
 import { Link } from "react-router-dom";
 

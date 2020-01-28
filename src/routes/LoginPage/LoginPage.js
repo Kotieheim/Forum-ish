@@ -24,24 +24,6 @@ export class LoginPage extends Component {
           </Link>
           <LoginForm onLoginSuccess={this.handleLoginSuccess} />
         </section>
-        <div className="Dummy_container">
-          <h2>Dummy Logins</h2>
-          <div className="Dummy_logins">
-            <div className="Dummy_credentials">
-              <p>jules</p>
-              <p>L0veP4per!</p>
-            </div>
-
-            <div className="Dummy_credentials">
-              <p>kodes</p>
-              <p>P@ssw0rd</p>
-            </div>
-            <div className="Dummy_credentials">
-              <p>dunder</p>
-              <p>L0veP4per!</p>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

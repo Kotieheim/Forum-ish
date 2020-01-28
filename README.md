@@ -8,11 +8,11 @@ Full Stack Message board App
   - Client: React, event-handlers, DOM
   - manipulation, AJAX and JWT Authentication
   - Web Server: Node and Express with PostgreSQL
-  - Database: Heroku
+  - Database: PostgreSQL
 
 ## Live Link
 
-[Live](https://forum-ish.kotieheim.now.sh/)
+[Forum-ish Live](https://forum-ish.kotieheim.now.sh/)
 
 ## Api
 

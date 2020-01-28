@@ -34,38 +34,60 @@ export class LoginForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
-        <div role="alert">{error && <p className="error_red">{error}</p>}</div>
-        <div className="user_name">
-          <label aria-label="password" htmlFor="username"></label>
-          <input
-            required
-            autoComplete="username"
-            name="user_name"
-            id="username"
-            placeholder="user name"
-          />
-        </div>
-        <div className="password">
-          <label aria-label="password" htmlFor="password"></label>
+      <div>
+        <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
+          <div role="alert">
+            {error && <p className="error_red">{error}</p>}
+          </div>
+          <div className="user_name">
+            <label aria-label="password" htmlFor="username"></label>
+            <input
+              required
+              autoComplete="username"
+              name="user_name"
+              id="username"
+              placeholder="user name"
+            />
+          </div>
+          <div className="password">
+            <label aria-label="password" htmlFor="password"></label>
 
-          <input
-            required
-            autoComplete="password"
-            name="password"
-            type="password"
-            placeholder="password"
-            id="password"
-          />
+            <input
+              required
+              autoComplete="password"
+              name="password"
+              type="password"
+              placeholder="password"
+              id="password"
+            />
+          </div>
+          <button
+            onClick={this.props.handleLogin}
+            className="LoginPage_button"
+            type="submit"
+          >
+            Log In
+          </button>
+        </form>
+        <div className="Dummy_container">
+          <h2>Dummy Logins</h2>
+          <div className="Dummy_logins">
+            <div className="Dummy_credentials">
+              <p>jules</p>
+              <p>L0veP4per!</p>
+            </div>
+
+            <div className="Dummy_credentials">
+              <p>kodes</p>
+              <p>P@ssw0rd</p>
+            </div>
+            <div className="Dummy_credentials">
+              <p>dunder</p>
+              <p>L0veP4per!</p>
+            </div>
+          </div>
         </div>
-        <button
-          onClick={this.props.handleLogin}
-          className="LoginPage_button"
-          type="submit"
-        >
-          Log In
-        </button>
-      </form>
+      </div>
     );
   }
 }
