@@ -37,7 +37,7 @@ export class LoginForm extends Component {
       <div>
         <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
           <div role="alert">
-            {error && <p className="error_red">{error}</p>}
+            {error && <p className="error_red">*{error}</p>}
           </div>
           <div className="user_name">
             <label aria-label="password" htmlFor="username"></label>

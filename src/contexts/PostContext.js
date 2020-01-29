@@ -13,6 +13,7 @@ const PostContext = React.createContext({
   clearError: () => {},
   setPost: () => {},
   addPost: () => {},
+  deletePost: () => {},
   clearPost: () => {},
   setComments: () => {},
   addComment: () => {},
@@ -41,6 +42,12 @@ export class PostProvider extends Component {
   addPost = posts => {
     this.setState({
       post: [...this.state.post, posts]
+    });
+  };
+  deletePost = postId => {
+    console.log(this.state);
+    this.setState({
+      post: this.state.post.filter(posts => posts.id !== postId)
     });
   };
   clearPost = () => {
@@ -76,6 +83,7 @@ export class PostProvider extends Component {
       clearError: this.clearError,
       setPost: this.setPost,
       addPost: this.addPost,
+      deletePost: this.deletePost,
       setComments: this.setComments,
       clearPost: this.clearPost,
       addComment: this.addComment,

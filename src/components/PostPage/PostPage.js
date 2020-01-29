@@ -5,15 +5,38 @@ import PostContext from "../../contexts/PostContext";
 import Moment from "moment";
 import CommentForm from "../CommentForm/CommentForm";
 import TokenService from "../../services/token-service";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 export class PostPage extends Component {
   static defaultProps = {
     match: { params: {} }
   };
-
   static contextType = PostContext;
-
+  state = { error: null };
+  handleDelete = e => {
+    const { postId } = this.props.match.params;
+    console.log("delete button", postId);
+    e.preventDefault();
+    fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        "content-type": "application/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(err => Promise.reject(err));
+        }
+        return res;
+      })
+      .then(() => {
+        this.props.history.push("/");
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
+  };
   componentDidMount() {
     const { postId } = this.props.match.params;
     Promise.all([
@@ -31,10 +54,28 @@ export class PostPage extends Component {
 
   render() {
     const { post, comments } = this.context;
-
+    const { error } = this.state;
     return (
       <div className="PostPage">
         <section className="PostPage_section">
+          <div role="alert" className="Handle_Delete">
+            {error && <p className="error_black">*{error}*</p>}
+          </div>
+          {TokenService.hasAuthToken() ? (
+            <button
+              onClick={e => {
+                if (
+                  window.confirm("Are you sure you wish to delete this post?")
+                )
+                  this.handleDelete(e);
+              }}
+              className="Delete_post"
+            >
+              Delete
+            </button>
+          ) : (
+            ""
+          )}
           <header className="PostPage_header">
             <div>
               <h2>author: </h2>
@@ -73,4 +114,4 @@ export class PostPage extends Component {
   }
 }
 
-export default PostPage;
+export default withRouter(PostPage);
