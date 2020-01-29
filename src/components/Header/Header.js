@@ -4,6 +4,8 @@ import "./Header.css";
 import TokenService from "../../services/token-service";
 import PostContext from "../../contexts/PostContext";
 
+// Renders either login and register or logout in the header depending on weather the user is logged in or not.
+
 export class Header extends Component {
   static contextType = PostContext;
   handleLogoutClick = () => {

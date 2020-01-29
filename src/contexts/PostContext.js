@@ -45,7 +45,6 @@ export class PostProvider extends Component {
     });
   };
   deletePost = postId => {
-    console.log(this.state);
     this.setState({
       post: this.state.post.filter(posts => posts.id !== postId)
     });

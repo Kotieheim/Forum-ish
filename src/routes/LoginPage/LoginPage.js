@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import "./LoginPage.css";
 import { Link } from "react-router-dom";
+
+// Route for the login page and form.
+
 export class LoginPage extends Component {
   static defaultProps = {
     location: {},

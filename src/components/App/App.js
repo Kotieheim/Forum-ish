@@ -11,6 +11,8 @@ import "./App.css";
 import PrivateRoute from "../Utils/PrivateRoute";
 import bannerlogo from "../../images/bannerlogo.PNG";
 
+// Main app component containing all routes and components. Also displays header with login, registration and banner logo.
+
 export class App extends Component {
   state = {
     isLoggedIn: false,

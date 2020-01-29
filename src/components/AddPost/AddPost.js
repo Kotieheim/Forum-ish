@@ -6,6 +6,8 @@ import TokenService from "../../services/token-service";
 import PostContext from "../../contexts/PostContext";
 import PropTypes from "prop-types";
 
+// Form handling request to add a new post to database.
+
 export class AddPost extends Component {
   static propTypes = {
     history: PropTypes.shape({

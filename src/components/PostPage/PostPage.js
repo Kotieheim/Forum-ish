@@ -7,6 +7,8 @@ import CommentForm from "../CommentForm/CommentForm";
 import TokenService from "../../services/token-service";
 import { Link, withRouter } from "react-router-dom";
 
+// Page containing full post by a user. other users are able to comment on post page as long as they are logged in and a delete button only rendered to those logged on. Users can only delete their own posts.
+
 export class PostPage extends Component {
   static defaultProps = {
     match: { params: {} }
@@ -15,7 +17,7 @@ export class PostPage extends Component {
   state = { error: null };
   handleDelete = e => {
     const { postId } = this.props.match.params;
-    console.log("delete button", postId);
+
     e.preventDefault();
     fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
       method: "DELETE",

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./IndividualPost.css";
 import Moment from "moment";
+
+// Small summary of a post all listed out on main page. These can be clicked on to vew the full posts content.
+
 export class IndividualPost extends Component {
   render() {
     Moment.locale("en");
@@ -17,7 +20,6 @@ export class IndividualPost extends Component {
           <header className="IndividualPost_header">
             <div className="text top-left">
               <span>author: {post.author.user_name}</span>
-              {/* <span>{Moment(post.date_created).format("MMM do YYYY")}</span> */}
             </div>
             <footer className="IndividualItem_footer">
               <h2 className="IndividualPost_title">{post.title}</h2>

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import AddPost from "../../components/AddPost/AddPost";
 import "./MakePostPage.css";
 
+// Route for adding a post.
+
 export class MakePostPage extends Component {
   render() {
     return (

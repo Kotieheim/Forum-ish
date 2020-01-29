@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./RegistrationForm.css";
 import AuthApiService from "../../services/auth-api-service";
+
+// Form for users to fill out and register an account with the database.
+
 export class RegistrationForm extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => {}

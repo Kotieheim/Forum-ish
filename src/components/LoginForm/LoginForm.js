@@ -3,6 +3,9 @@ import "./LoginForm.css";
 import AuthApiServie from "../../services/auth-api-service";
 import TokenService from "../../services/token-service";
 import PostContext from "../../contexts/PostContext";
+
+// Form used to login as long as the user has registered an account within the database.
+
 export class LoginForm extends Component {
   static contextType = PostContext;
   static defaultProps = {

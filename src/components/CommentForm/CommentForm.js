@@ -4,6 +4,8 @@ import "./CommentForm.css";
 import config from "../../config";
 import TokenService from "../../services/token-service";
 
+// Form used to fill out and post a comment on main post page. This form will only appear if the user is logged in.
+
 export class CommentForm extends Component {
   static contextType = PostContext;
   handleSubmit = e => {

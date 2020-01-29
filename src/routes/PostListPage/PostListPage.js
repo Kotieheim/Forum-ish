@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import IndividualPost from "../../components/IndividualPost/IndividualPost";
-
 import "./PostListPage.css";
 import PostListContext from "../../contexts/PostListContext";
 import PostApiService from "../../services/post-api-service";
 import { Link } from "react-router-dom";
+
+// Main page route, rendering all individual posts summary snippets.
 
 export class PostListPage extends Component {
   static contextType = PostListContext;

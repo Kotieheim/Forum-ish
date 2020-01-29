@@ -3,6 +3,8 @@ import RegistrationForm from "../../components/RegistrationForm/RegistrationForm
 import "./RegistrationPage.css";
 import { Link } from "react-router-dom";
 
+// Route for registration and the register form.
+
 export class RegistrationPage extends Component {
   static defaultProps = {
     history: {
